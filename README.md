@@ -54,6 +54,35 @@ composer install
 
 ~/PHPChallenge/MightyMindsRoot/MightyMinds/$ composer install
 
+# .env file it is required by silverstripe to connect to the proper resources.
+
+```
+# DB credentials
+
+SS_DATABASE_CLASS="MySQLDatabase"
+
+SS_DATABASE_SERVER="172.22.0.2"
+
+SS_DATABASE_USERNAME="root"
+
+SS_DATABASE_PASSWORD="domenico123"
+
+SS_DATABASE_PORT="3306"
+
+SS_DATABASE_NAME="mightymindsdb"
+
+SS_DEFAULT_ADMIN_USERNAME="admin"
+
+SS_DEFAULT_ADMIN_PASSWORD="domenico123"
+
+# WARNING: in a live environment, change this to "live" instead of dev
+
+SS_ENVIRONMENT_TYPE="dev"
+```
+
+
+
+
 ```
 
 ## The Type Definitions
