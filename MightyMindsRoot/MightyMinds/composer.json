@@ -8,7 +8,8 @@
         "silverstripe/recipe-cms": "~4.9.0@stable",
         "silverstripe-themes/simple": "~3.2.0",
         "silverstripe/login-forms": "~4.5.0@stable",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "silverstripe/graphql": "3.6.0@stable"
     },
     "extra": {
         "resources-dir": "_resources",
@@ -27,8 +28,16 @@
         ]
     },
     "config": {
-        "process-timeout": 600
+        "process-timeout": 600,
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true
+        }
     },
     "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require-dev": {
+        "silverstripe/graphql-devtools": "dev-master"
+    }
 }
