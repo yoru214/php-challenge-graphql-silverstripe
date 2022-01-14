@@ -31,7 +31,7 @@ class TopMenuTypeCreator extends TypeCreator
                 'args' => $mainConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($mainConnection) {
                     return $mainConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->main(),
                         $args,
                         $context
                     );
@@ -43,7 +43,7 @@ class TopMenuTypeCreator extends TypeCreator
                 'args' => $helpConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($helpConnection) {
                     return $helpConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->help(),
                         $args,
                         $context
                     );

@@ -21,8 +21,7 @@ class ProfileMenuTypeCreator extends TypeCreator
             'label' => ['type' => Type::string()],
             'url' => ['type' => Type::string()],
             'type' => ['type' => Type::string()],
-            'icon' => ['type' => Type::string()]
-           
+            'icon' => ['type' => Type::string()]           
         ];
     }
 }

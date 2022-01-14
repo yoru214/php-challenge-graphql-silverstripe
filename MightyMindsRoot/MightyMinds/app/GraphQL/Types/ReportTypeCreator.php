@@ -17,7 +17,7 @@ class ReportTypeCreator extends TypeCreator
 
     public function fields()
     {   
-        $dataConnection = Connection::create('Data')
+        $dataConnection = Connection::create('Report_Data')
             ->setConnectionType(function () {
                 return $this->manager->getType('Data');
             });
@@ -28,7 +28,7 @@ class ReportTypeCreator extends TypeCreator
                 'args' => $dataConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($dataConnection) {
                     return $dataConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->Data(),
                         $args,
                         $context
                     );

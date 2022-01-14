@@ -4,9 +4,11 @@ namespace MyProject\GraphQL;
 
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
-use SilverStripe\Security\Member;
 use SilverStripe\GraphQL\OperationResolver;
 use SilverStripe\GraphQL\QueryCreator;
+
+
+use MyProject\DataObjects\SidebarWidget;
 
 class SidebarWidgetsQueryCreator extends QueryCreator implements OperationResolver
 {
@@ -26,14 +28,14 @@ class SidebarWidgetsQueryCreator extends QueryCreator implements OperationResolv
 
     public function resolve($object, array $args, $context, ResolveInfo $info)
     {
-        $member = Member::singleton();
-        if (!$member->canView($context['currentUser'])) {
+        $sidebarwiget = SidebarWidget::singleton();
+        if (!$sidebarwiget->canView($context['currentUser'])) {
             throw new \InvalidArgumentException(sprintf(
                 '%s view access not permitted',
-                Member::class
+                SidebarWidget::class
             ));
         }
-        $list = Member::get();
+        $list = SidebarWidget::get();
 
       
         return $list;

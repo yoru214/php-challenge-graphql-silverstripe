@@ -31,7 +31,7 @@ class MainTypeCreator extends TypeCreator
                 'args' => $submenusConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($submenusConnection) {
                     return $submenusConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->submenu(),
                         $args,
                         $context
                     );

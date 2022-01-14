@@ -6,6 +6,7 @@ use GraphQL\Type\Definition\Type;
 use SilverStripe\GraphQL\TypeCreator;
 use SilverStripe\GraphQL\Pagination\Connection;
 
+
 class SidebarWidgetsTypeCreator extends TypeCreator
 {
     public function attributes()
@@ -32,7 +33,7 @@ class SidebarWidgetsTypeCreator extends TypeCreator
                 'args' => $wigeturlsConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($wigeturlsConnection) {
                     return $wigeturlsConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->WidgetURLS(),
                         $args,
                         $context
                     );

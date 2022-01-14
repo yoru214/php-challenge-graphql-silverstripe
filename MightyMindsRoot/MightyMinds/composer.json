@@ -9,7 +9,8 @@
         "silverstripe-themes/simple": "~3.2.0",
         "silverstripe/login-forms": "~4.5.0@stable",
         "phpunit/phpunit": "^9.5",
-        "silverstripe/graphql": "3.6.0@stable"
+        "silverstripe/graphql": "3.6.0@stable",
+        "silverstripe/asset-admin": "^1.9"
     },
     "extra": {
         "resources-dir": "_resources",

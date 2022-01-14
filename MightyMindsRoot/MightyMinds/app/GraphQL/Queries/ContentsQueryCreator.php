@@ -4,9 +4,11 @@ namespace MyProject\GraphQL;
 
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
-use SilverStripe\Security\Member;
 use SilverStripe\GraphQL\OperationResolver;
 use SilverStripe\GraphQL\QueryCreator;
+
+
+use MyProject\DataObjects\Content;
 
 class ContentsQueryCreator extends QueryCreator implements OperationResolver
 {
@@ -26,14 +28,14 @@ class ContentsQueryCreator extends QueryCreator implements OperationResolver
 
     public function resolve($object, array $args, $context, ResolveInfo $info)
     {
-        $member = Member::singleton();
-        if (!$member->canView($context['currentUser'])) {
+        $content = Content::singleton();
+        if (!$content->canView($context['currentUser'])) {
             throw new \InvalidArgumentException(sprintf(
                 '%s view access not permitted',
-                Member::class
+                Content::class
             ));
         }
-        $list = Member::get();
+        $list = Content::get();
 
       
         return $list;
