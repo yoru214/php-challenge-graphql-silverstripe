@@ -7,6 +7,7 @@ use SilverStripe\ORM\DataObject;
 use MyProject\DataObjects\Header;
 use MyProject\DataObjects\SidebarWidget;
 use MyProject\DataObjects\Body;
+use MyProject\DataObjects\Home;
 
 class Content extends DataObject  implements ScaffoldingProvider {
 
@@ -16,6 +17,10 @@ class Content extends DataObject  implements ScaffoldingProvider {
         'Header' => Header::class,
         'SidebarWidget' => SidebarWidget::class,
         'Body' => Body::class
+    ];
+
+    private static $has_one = [
+        'Home' => Home::class
     ];
 
     private static $table_name = "contents";

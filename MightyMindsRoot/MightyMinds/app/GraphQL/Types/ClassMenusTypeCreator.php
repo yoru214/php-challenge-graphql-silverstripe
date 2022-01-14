@@ -35,7 +35,7 @@ class ClassMenusTypeCreator extends TypeCreator
                 'args' => $gridurlsConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($gridurlsConnection) {
                     return $gridurlsConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->urls(),
                         $args,
                         $context
                     );
@@ -46,7 +46,7 @@ class ClassMenusTypeCreator extends TypeCreator
                 'args' => $bottomlinksConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($bottomlinksConnection) {
                     return $bottomlinksConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->bottomLinks(),
                         $args,
                         $context
                     );
@@ -57,7 +57,7 @@ class ClassMenusTypeCreator extends TypeCreator
                 'args' => $contextmenuConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($contextmenuConnection) {
                     return $contextmenuConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->ContextMenu(),
                         $args,
                         $context
                     );

@@ -34,7 +34,7 @@ class ClassesDataTypeCreator extends TypeCreator
                 'args' => $infobarConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($infobarConnection) {
                     return $infobarConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->infobar(),
                         $args,
                         $context
                     );

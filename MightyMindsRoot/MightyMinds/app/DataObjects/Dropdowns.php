@@ -1,29 +1,30 @@
 <?php namespace MyProject\DataObjects;
 
+use GraphQL\Type\Definition\ResolveInfo;
 use SilverStripe\GraphQL\Scaffolding\Interfaces\ScaffoldingProvider;
 use SilverStripe\GraphQL\Scaffolding\Scaffolders\SchemaScaffolder;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\ORM\ManyManyList;
 
-use MyProject\DataObjects\Dropdowns;
+use MyProject\DataObjects\Dropdown;
 
-class Dropdown extends DataObject  implements ScaffoldingProvider {
+class Dropdowns extends DataObject  implements ScaffoldingProvider {
 
-    private static $db = [
-        'option' => 'Varchar',
-        'value' => 'Varchar'
+ 
+
+    private static $has_many  = [
+        'year' => Dropdown::class,        
+        'subjects' => Dropdown::class
     ];
 
-    private static $has_one = [
-        'dropdowns' => Dropdowns::class
-    ];
 
-    private static $table_name = "dropdowns";
+    private static $table_name = "dropdowns_group";
 
     public function provideGraphQLScaffolding(SchemaScaffolder $scaffolder)
     {
         $scaffolder
-            ->type(Dropdown::class)
-                ->addFields(['option', 'value'])
+            ->type(Body::class)
+                ->addFields([])
                 ->operation(SchemaScaffolder::READ)
                     ->end()
                 ->operation(SchemaScaffolder::UPDATE)
