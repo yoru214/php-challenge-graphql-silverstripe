@@ -17,11 +17,11 @@ class DropdownsTypeCreator extends TypeCreator
 
     public function fields()
     {   
-        $yearConnection = Connection::create('dropdown1')
+        $yearConnection = Connection::create('year')
             ->setConnectionType(function () {
                 return $this->manager->getType('dropdown');
             });
-        $subjectsConnection = Connection::create('dropdown2')
+        $subjectsConnection = Connection::create('subjects')
             ->setConnectionType(function () {
                 return $this->manager->getType('dropdown');
             });
@@ -31,7 +31,7 @@ class DropdownsTypeCreator extends TypeCreator
                 'args' => $yearConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($yearConnection) {
                     return $yearConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->year(),
                         $args,
                         $context
                     );
@@ -42,7 +42,7 @@ class DropdownsTypeCreator extends TypeCreator
                 'args' => $subjectsConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($subjectsConnection) {
                     return $subjectsConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->subjects(),
                         $args,
                         $context
                     );

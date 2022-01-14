@@ -7,6 +7,7 @@ use SilverStripe\ORM\DataObject;
 use MyProject\DataObjects\Report;
 use MyProject\DataObjects\URL;
 use MyProject\DataObjects\Content;
+use MyProject\DataObjects\Classes;
 
 class Header extends DataObject  implements ScaffoldingProvider {
 
@@ -23,7 +24,8 @@ class Header extends DataObject  implements ScaffoldingProvider {
     
     
     private static $has_one  = [
-        'Content' => Content::class
+        'Content' => Content::class,
+        'Classess' => Classes::class
     ];
 
     private static $table_name = "headers";

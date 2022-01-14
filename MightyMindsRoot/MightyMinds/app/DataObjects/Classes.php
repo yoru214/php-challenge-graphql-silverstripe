@@ -1,24 +1,27 @@
-<?php namespace MyProject\DataObjects;
+<?php
 
+namespace MyProject\DataObjects;
 use SilverStripe\GraphQL\Scaffolding\Interfaces\ScaffoldingProvider;
 use SilverStripe\GraphQL\Scaffolding\Scaffolders\SchemaScaffolder;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+
 use SilverStripe\ORM\DataObject;
+use MyProject\DataObjects\Header;
 
-class ProfileMenu extends DataObject  implements ScaffoldingProvider {
+class Classes extends DataObject implements ScaffoldingProvider {
 
-    private static $db = [
-        'label' => 'Varchar',
-        'url' => 'Varchar',
-        'type' => 'Varchar',
-        'icon' => 'Varchar'
+ 
+    private static $has_many = [
+        'Header' => Header::class
     ];
-    private static $table_name = "profile_menus";
+    
+    private static $table_name = "classes";
 
     public function provideGraphQLScaffolding(SchemaScaffolder $scaffolder)
     {
         $scaffolder
-            ->type(ProfileMenu::class)
-                ->addFields(['label', 'url', 'type', 'icon'])
+            ->type(Classes::class)
+                ->addFields([])
                 ->operation(SchemaScaffolder::READ)
                     ->end()
                 ->operation(SchemaScaffolder::UPDATE)
@@ -27,4 +30,7 @@ class ProfileMenu extends DataObject  implements ScaffoldingProvider {
 
         return $scaffolder;
     }
+
+    
+
 }

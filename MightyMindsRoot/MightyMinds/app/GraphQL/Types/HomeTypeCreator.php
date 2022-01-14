@@ -27,7 +27,7 @@ class HomePageTypeCreator extends TypeCreator
                 'args' => $contentsConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($contentsConnection) {
                     return $contentsConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->Contents(),
                         $args,
                         $context
                     );

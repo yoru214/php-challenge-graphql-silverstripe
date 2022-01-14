@@ -4,26 +4,31 @@ use SilverStripe\GraphQL\Scaffolding\Interfaces\ScaffoldingProvider;
 use SilverStripe\GraphQL\Scaffolding\Scaffolders\SchemaScaffolder;
 use SilverStripe\ORM\DataObject;
 
-use MyProject\DataObjects\Dropdowns;
 
-class Dropdown extends DataObject  implements ScaffoldingProvider {
+use MyProject\DataObjects\ClassMenu;
+
+class GridURL extends DataObject  implements ScaffoldingProvider {
 
     private static $db = [
-        'option' => 'Varchar',
-        'value' => 'Varchar'
+        'label' => 'Varchar',
+        'url' => 'Varchar',
+        'type' => 'Varchar',
+        'icon' => 'Varchar',
+        'color' => 'Varchar'
     ];
 
     private static $has_one = [
-        'dropdowns' => Dropdowns::class
+        'ClassMenu' => ClassMenu::class
     ];
 
-    private static $table_name = "dropdowns";
+
+    private static $table_name = "grid_urls";
 
     public function provideGraphQLScaffolding(SchemaScaffolder $scaffolder)
     {
         $scaffolder
-            ->type(Dropdown::class)
-                ->addFields(['option', 'value'])
+            ->type(GridURL::class)
+                ->addFields(['label', 'url', 'type', 'icon', 'color'])
                 ->operation(SchemaScaffolder::READ)
                     ->end()
                 ->operation(SchemaScaffolder::UPDATE)
