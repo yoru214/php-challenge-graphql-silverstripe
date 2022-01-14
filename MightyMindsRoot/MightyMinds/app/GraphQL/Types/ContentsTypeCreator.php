@@ -35,7 +35,7 @@ class ContentsTypeCreator extends TypeCreator
                 'args' => $headerConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($headerConnection) {
                     return $headerConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->Header(),
                         $args,
                         $context
                     );
@@ -46,7 +46,7 @@ class ContentsTypeCreator extends TypeCreator
                 'args' => $sidebarwidgetsConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($sidebarwidgetsConnection) {
                     return $sidebarwidgetsConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->SidebarWidget(),
                         $args,
                         $context
                     );
@@ -57,7 +57,7 @@ class ContentsTypeCreator extends TypeCreator
                 'args' => $bodyConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($bodyConnection) {
                     return $bodyConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->Body(),
                         $args,
                         $context
                     );

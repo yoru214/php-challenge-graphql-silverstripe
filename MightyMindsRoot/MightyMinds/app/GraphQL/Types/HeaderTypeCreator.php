@@ -31,7 +31,7 @@ class HeaderTypeCreator extends TypeCreator
                 'args' => $reportConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($reportConnection) {
                     return $reportConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->Report(),
                         $args,
                         $context
                     );
@@ -43,7 +43,7 @@ class HeaderTypeCreator extends TypeCreator
                 'args' => $urlConnection->args(),
                 'resolve' => function ($obj, $args, $context) use ($urlConnection) {
                     return $urlConnection->resolveList(
-                        $obj->Groups(),
+                        $obj->URL(),
                         $args,
                         $context
                     );

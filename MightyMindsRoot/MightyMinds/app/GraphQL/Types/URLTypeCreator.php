@@ -32,7 +32,7 @@ class URLTypeCreator extends TypeCreator
                 'args' => $submenu2Connection->args(),
                 'resolve' => function ($obj, $args, $context) use ($submenu2Connection) {
                     return $submenu2Connection->resolveList(
-                        $obj->Groups(),
+                        $obj->submenu(),
                         $args,
                         $context
                     );

@@ -26,4 +26,5 @@ class LinksTypeCreator extends TypeCreator
            
         ];
     }
+    
 }

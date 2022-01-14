@@ -35,7 +35,7 @@ class BodyTypeCreator extends TypeCreator
                     'args' => $linksConnection->args(),
                     'resolve' => function ($obj, $args, $context) use ($linksConnection) {
                         return $linksConnection->resolveList(
-                            $obj->Groups(),
+                            $obj->Links(),
                             $args,
                             $context
                         );
@@ -46,7 +46,7 @@ class BodyTypeCreator extends TypeCreator
                     'args' => $bodylinksConnection->args(),
                     'resolve' => function ($obj, $args, $context) use ($bodylinksConnection) {
                         return $bodylinksConnection->resolveList(
-                            $obj->Groups(),
+                            $obj->BodyLinks(),
                             $args,
                             $context
                         );

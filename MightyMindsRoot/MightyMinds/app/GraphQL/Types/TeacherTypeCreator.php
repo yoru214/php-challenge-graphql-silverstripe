@@ -20,7 +20,7 @@ class TeacherTypeCreator extends TypeCreator
         return [
             'ID' => ['type' => Type::nonNull(Type::id())],
             'lastname' => ['type' => Type::string()],
-            'firstName' => ['type' => Type::string()]
+            'firstname' => ['type' => Type::string()]
            
         ];
     }
