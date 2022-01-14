@@ -2,7 +2,7 @@
 
 This repo is the output of my work when doing the challenge. 
 
-For more information ablut the challenge, please refer to the [Original ReadMe](Original.md) of the challenge.
+For more information about the challenge, please refer to the [Original ReadMe](Original.md) of the challenge.
 
 ## Things to note when installing
 
