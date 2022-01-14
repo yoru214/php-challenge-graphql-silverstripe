@@ -44,7 +44,7 @@ SilverStripe\GraphQL\Manager:
         dropdowns: 'MyProject\GraphQL\DropdownsTypeCreator'
         # createNewClasses: 'MyProject\GraphQL\CreateNewClassesTypeCreator'
         bodyActions: 'MyProject\GraphQL\BodyActionsTypeCreator'
-        # Classes: 'MyProject\GraphQL\ClassesTypeCreator'
+        Classes: 'MyProject\GraphQL\ClassesTypeCreator'
       queries:
         help: 'MyProject\GraphQL\HelpQueryCreator'
         Teachers: 'MyProject\GraphQL\TeachersQueryCreator'
@@ -76,6 +76,6 @@ SilverStripe\GraphQL\Manager:
         dropdowns: 'MyProject\GraphQL\DropdownsQueryCreator'
         # createNewClasses: 'MyProject\GraphQL\CreateNewClassesQueryCreator'
         bodyActions: 'MyProject\GraphQL\BodyActionsQueryCreator'
-        # Classes: 'MyProject\GraphQL\ClassesQueryCreator'
+        Classes: 'MyProject\GraphQL\ClassesQueryCreator'
         
       
